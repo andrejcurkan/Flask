@@ -75,6 +75,20 @@ def counter():
 # Инициализируем атрибут для хранения числа посещений
 counter.visits = 0
 
+from flask import Flask
+
+app = Flask(__name__)
+
+
+@app.route('/smile')
+def smile():
+    # Рисуем "улыбку" с использованием букв
+    smile_art = """
+    :-D
+
+    """
+    return f"<pre>{smile_art}</pre>"
+
 
 if __name__ == "__main__":
     app.run(debug=True)
